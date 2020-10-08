@@ -1,6 +1,7 @@
 package login;
 
 import connection.BookDAO;
+import model.BookModel;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -12,7 +13,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 @WebServlet(name = "Book")
-public class Book extends HttpServlet {
+public class BuyBookServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         String BookName = request.getParameter("bookname");
@@ -21,10 +22,9 @@ public class Book extends HttpServlet {
         String price = request.getParameter("price");
 
         HttpSession session = request.getSession();
-        String username = (String) session.getAttribute("username");
+        Integer userID = (Integer) session.getAttribute("user_id");
 
-        bookModel book = new bookModel(BookName, authorName, version, price, username);
-
+        BookModel book = new BookModel(BookName, authorName, version, price, userID);
         BookDAO bookDAO = new BookDAO();
         String result = bookDAO.sentBook(book);
         PrintWriter out = response.getWriter();

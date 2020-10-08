@@ -21,7 +21,6 @@
     response.setHeader("pragma", "no-cache"); //Http 1.0
     response.setHeader("Expires", "0"); // for proxy server
 
-
     if (session.getAttribute("username") == null) {
         response.sendRedirect("login.jsp");
     }
@@ -33,7 +32,10 @@
     <div class="form1">
         <br><br><br>
         <a href="books.jsp" class=" form1 submit"> Buy Book</a> <br><br><br>
-        <a href="view_book.jsp" class="form1 submit"> View Book</a><br>
+
+        <form action="View_BookServlet" class="form1" method="post">
+            <input type="submit" class="submit" value="View Book">
+        </form>
 
         <form action="Logout" class="form1" method="post">
             <input type="submit" class="submit" value="Sign Out">
@@ -41,7 +43,6 @@
 
     </div>
 </div>
-
 
 </body>
 </html>

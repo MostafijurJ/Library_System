@@ -9,7 +9,7 @@
 
     <servlet>
         <servlet-name>Login</servlet-name>
-        <servlet-class>login.Login</servlet-class>
+        <servlet-class>login.LoginServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>Login</servlet-name>
@@ -18,7 +18,7 @@
 
     <servlet>
         <servlet-name>Logout</servlet-name>
-        <servlet-class>login.Logout</servlet-class>
+        <servlet-class>login.LogoutServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>Logout</servlet-name>
@@ -27,7 +27,7 @@
 
     <servlet>
         <servlet-name>Register</servlet-name>
-        <servlet-class>login.Register</servlet-class>
+        <servlet-class>login.RegisterServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>Register</servlet-name>
@@ -36,7 +36,7 @@
 
     <servlet>
         <servlet-name>Book</servlet-name>
-        <servlet-class>login.Book</servlet-class>
+        <servlet-class>login.BuyBookServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>Book</servlet-name>
@@ -44,21 +44,20 @@
     </servlet-mapping>
 
     <servlet>
-        <servlet-name>ShowBook</servlet-name>
-        <servlet-class>login.ShowBook</servlet-class>
+        <servlet-name>View_BookServlet</servlet-name>
+        <servlet-class>login.View_BookServlet</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>ShowBook</servlet-name>
-        <url-pattern>/ShowBook/*</url-pattern>
+        <servlet-name>View_BookServlet</servlet-name>
+        <url-pattern>/View_BookServlet/*</url-pattern>
     </servlet-mapping>
-
     <servlet>
-        <servlet-name>View_Book</servlet-name>
-        <servlet-class>login.View_Book</servlet-class>
+        <servlet-name>unique_book_detailsServlet</servlet-name>
+        <servlet-class>login.UniqueBookServlet</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>View_Book</servlet-name>
-        <url-pattern>/View_Book/*</url-pattern>
+        <servlet-name>unique_book_detailsServlet</servlet-name>
+        <url-pattern>/unique-book/*</url-pattern>
     </servlet-mapping>
 
 </web-app>

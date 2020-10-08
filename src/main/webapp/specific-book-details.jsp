@@ -1,14 +1,13 @@
 <%--
   Created by IntelliJ IDEA.
   User: BS440
-  Date: 10/7/2020
-  Time: 3:32 PM
+  Date: 10/8/2020
+  Time: 3:02 PM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <html>
 <head>
@@ -33,35 +32,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 
-    <title>view book</title>
+
+    <title>unique book details</title>
+
 </head>
 <body>
-<div class="bookmain">
 
-    <p class="sign" align="center">List of your Purchase Book</p>
+<div class="bk">
 
+    <p class="sign" align="center"> Details of this Book</p>
 
-    <table class="table table-striped bookmain">
+    <table class=" bk table table-striped">
         <thead>
         <tr>
+            <th scope="col">ID</th>
             <th scope="col">Book Name</th>
+            <th scope="col">Author Name</th>
+            <th scope="col">Version</th>
+            <th scope="col">Price</th>
         </tr>
         </thead>
         <tbody>
-        <tbody>
+        <tr>
+            <td><c:out value=" ${book.getId()}"/></td>
+            <td><c:out value=" ${book.getName()}"/></td>
+            <td><c:out value=" ${book.getAuthor()}"/></td>
+            <td><c:out value=" ${book.getVersion()}"/></td>
+            <td><c:out value=" ${book.getPrice()}"/></td>
 
-        <c:forEach items="${booklist}" var="book">
-            <tr>
-                <td><c:out value=" ${book.book_name}"/></td>
-               <td><a href="unique-book?id=<c:out value='${book.book_id}' />">Details</a>
-            </tr>
+            <td><a href="#?id=<c:out value='${book.getId()}' />">Edit</a>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="#?id=<c:out value='${book.getId()}' />">Delete</a></td>
 
-        </c:forEach>
+         </tr>
 
-        </tbody>
         </tbody>
     </table>
-
 </div>
+
+
 </body>
 </html>

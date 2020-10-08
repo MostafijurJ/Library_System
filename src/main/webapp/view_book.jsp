@@ -6,6 +6,10 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
+
 <html>
 <head>
 
@@ -29,34 +33,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 
-
     <title>view book</title>
 </head>
 <body>
-<div class="bk">
+<div class="bookmain">
+
     <p class="sign" align="center">List of your Purchase Book</p>
 
-    <form action="View_Book" method="get">
 
-        <table class="table table-striped bk1">
-            <thead>
+    <table class="table table-striped bookmain">
+        <thead>
+        <tr>
+            <th scope="col">Book Name</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tbody>
+
+        <c:forEach items="${booklist}" var="book">
             <tr>
-                <th scope="col"></th>
-                <th scope="col">Book Name</th>
-                <th scope="col">Author Name</th>
-                <th scope="col">Version</th>
-                <th scope="col">Price</th>
+                <td><c:out value=" ${book.book_name}"/></td>
+               <td><a href="unique-book?id=<c:out value='${book.book_id}' />">Details</a>
             </tr>
-            </thead>
-            <tbody>
 
-            </tbody>
-        </table>
-    <input type="submit" value="submit">
-    </form>
+        </c:forEach>
+
+        </tbody>
+        </tbody>
+    </table>
 
 </div>
-
-
 </body>
 </html>

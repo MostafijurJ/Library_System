@@ -1,27 +1,26 @@
-package login;
+package model;
 
-public class bookModel {
+public class BookModel {
     private  String BookName, authorName, Version, Price;
-    private String username;
+    int  UserId;
 
 
 
-    public bookModel(String bookName, String authorName, String version, String price, String Username) {
+    public BookModel(String bookName, String authorName, String version, String price, int useid) {
         BookName = bookName;
         this.authorName = authorName;
         Version = version;
         Price = price;
-        this.username = Username;
+        this.UserId = useid;
 
     }
 
-
-    public String getUsername() {
-        return username;
+    public int getUserId() {
+        return UserId;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setUserId(int userId) {
+        UserId = userId;
     }
 
     public String getBookName() {

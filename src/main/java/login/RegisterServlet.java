@@ -1,6 +1,7 @@
 package login;
 
 import connection.RegisterDAO;
+import model.User;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -12,7 +13,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 @WebServlet(name = "Register")
-public class Register extends HttpServlet {
+public class RegisterServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String UserName = request.getParameter("username");
         String UserEmail = request.getParameter("email");
