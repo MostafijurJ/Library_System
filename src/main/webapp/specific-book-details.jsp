@@ -60,9 +60,9 @@
             <td><c:out value=" ${book.getVersion()}"/></td>
             <td><c:out value=" ${book.getPrice()}"/></td>
 
-            <td><a href="#?id=<c:out value='${book.getId()}' />">Edit</a>
+            <td><a href="EditServlet?id=<c:out value='${book.getId()}' />">Edit</a>
                 &nbsp;&nbsp;&nbsp;&nbsp;
-                <a href="#?id=<c:out value='${book.getId()}' />">Delete</a></td>
+                <a href="DeleteBookServlet?id=<c:out value='${book.getId()}' />">Delete</a></td>
 
          </tr>
 

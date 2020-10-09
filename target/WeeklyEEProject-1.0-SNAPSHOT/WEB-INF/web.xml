@@ -45,7 +45,7 @@
 
     <servlet>
         <servlet-name>View_BookServlet</servlet-name>
-        <servlet-class>login.View_BookServlet</servlet-class>
+        <servlet-class>login.ViewBookServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>View_BookServlet</servlet-name>
@@ -58,6 +58,33 @@
     <servlet-mapping>
         <servlet-name>unique_book_detailsServlet</servlet-name>
         <url-pattern>/unique-book/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>EditServlet</servlet-name>
+        <servlet-class>login.EditBoookServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>EditServlet</servlet-name>
+        <url-pattern>/EditServlet/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>DeleteBookServlet</servlet-name>
+        <servlet-class>login.DeleteBookServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DeleteBookServlet</servlet-name>
+        <url-pattern>/DeleteBookServlet/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>UpdateBookServlet</servlet-name>
+        <servlet-class>login.UpdateBookServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UpdateBookServlet</servlet-name>
+        <url-pattern>/UpdateBookServlet/*</url-pattern>
     </servlet-mapping>
 
 </web-app>

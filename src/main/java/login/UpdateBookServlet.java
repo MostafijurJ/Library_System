@@ -1,7 +1,7 @@
 package login;
 
 import connection.BookDAO;
-import model.BookModel;
+import model.SingleBookModel;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -12,8 +12,8 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet(name = "Book")
-public class BuyBookServlet extends HttpServlet {
+@WebServlet(name = "UpdateBookServlet")
+public class UpdateBookServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         String BookName = request.getParameter("bookname");
@@ -22,13 +22,19 @@ public class BuyBookServlet extends HttpServlet {
         String price = request.getParameter("price");
 
         HttpSession session = request.getSession();
-        Integer userID = (Integer) session.getAttribute("user_id");
+        Integer bookid = (Integer) session.getAttribute("book-id");
 
-        BookModel book = new BookModel(BookName, authorName, version, price, userID);
+        SingleBookModel bk = new SingleBookModel(bookid, BookName, authorName, version, price);
         BookDAO bookDAO = new BookDAO();
-        String result = bookDAO.sentBook(book);
+
+        String result = bookDAO.UpdateBook(bk);
         PrintWriter out = response.getWriter();
         out.println(result);
-        response.sendRedirect("purchase-message.jsp");
+
+        response.sendRedirect("update-message.jsp");
+    }
+
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
     }
 }
